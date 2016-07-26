@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-18 10:26+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: models.py:171
+msgid "Mailchimp Log"
+msgstr "Attivita' di Mailchimp"
+
+#: models.py:172
+msgid "Mailchimp Logs"
+msgstr "Attivita' di Mailchimp"
+
+#: templates/mailchimp/campaign_information.html:8
+#: templates/mailchimp/overview.html:8
+msgid "Home"
+msgstr "Principale"
+
+#: templates/mailchimp/campaign_information.html:9
+#: templates/mailchimp/overview.html:9
+msgid "mailchimp overview"
+msgstr "Panoramica Mailchimp"
+
+#: templates/mailchimp/campaign_information.html:28
+msgid "Campaign Subject"
+msgstr "Titolo campagna"
+
+#: templates/mailchimp/campaign_information.html:31
+#: templates/mailchimp/overview.html:25
+msgid "Sent Date"
+msgstr "Data Invio"
+
+#: templates/mailchimp/campaign_information.html:35
+msgid "Recipients"
+msgstr "Destinatari"
+
+#: templates/mailchimp/campaign_information.html:40
+msgid "Object"
+msgstr "Oggetto"
+
+#: templates/mailchimp/overview.html:19
+msgid "Log"
+msgstr "Attivita'"
+
+#: templates/mailchimp/overview.html:24 templates/mailchimp/overview.html:60
+msgid "Subject"
+msgstr "Titolo"
+
+#: templates/mailchimp/overview.html:40
+msgid "First"
+msgstr "Primo"
+
+#: templates/mailchimp/overview.html:50
+msgid "Last"
+msgstr "Ultimo"
+
+#: templates/mailchimp/overview.html:55
+msgid "Queue"
+msgstr "Coda"
+
+#: templates/mailchimp/overview.html:61
+msgid "Actions"
+msgstr "Azioni"
+
+#: templates/mailchimp/overview.html:68
+msgid "Send Now!"
+msgstr "Invia ora!"
+
+#: templates/mailchimp/overview.html:68
+msgid "Cancel!"
+msgstr "Annulla!"
+
+#: templates/mailchimp/overview.html:71
+msgid "No Campaigns in the Queue"
+msgstr "Nessuna campagna in coda"
+
+#: templates/mailchimp/send_button.html:23
+#: templates/mailchimp/send_button.html:25
+msgid "Sent via mailchimp:"
+msgstr "Inviate tramite Mailchimp:"
+
+#: templates/mailchimp/send_button.html:28
+msgid "scheduled for sending via mailchimp"
+msgstr "Programmate per essere intiate tramite Mailchimp"
+
+#: templates/mailchimp/send_button.html:31
+msgid "Send via Mailchimp"
+msgstr "Invia  tramite Mailchimp"
+
+#: templates/mailchimp/send_button.html:35
+msgid "Send Test Mail"
+msgstr "Invia mail di prova"
+
+#: templates/mailchimp/send_button.html:37
+msgid "your account requires a valid email to send test mails"
+msgstr "Il tuo account richied un indirizzo email valido per eseguire l'invio"
+
+#: templates/mailchimp/send_test.html:22
+msgid "Test Sending in Progress"
+msgstr "Invio di prova in corso"
+
+#: templates/mailchimp/send_test.html:23
+msgid ""
+"Please do not leave the page while the test mail is being sent.\n"
+"\t\tThis process might take several minutes."
+msgstr "Per favore non lasciare questa pagina durante l'invio di prova\n"
+"\t\tQuesto processo potrebbe richiedere alcuni minuti"

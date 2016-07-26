@@ -1,0 +1,16 @@
+Dear {{ to_name }}
+\n
+A Windshieldink user has informed us of abusive communication received from your account on {{ abusive_date }}.
+\n
+We take all user concerns seriously and will be investigating this matter further.
+\n
+It is our goal that Windshieldink users remain courteous and non-confrontational when communicating with other users.
+\n
+Our policy is to terminate and remove abusive users from our community.
+\n
+Sincerely,
+\n
+Your Windshieldink Team
+\n
+\n
+Questions? E-mail abuse@windshieldink.com

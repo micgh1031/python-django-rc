@@ -1,0 +1,12 @@
+venv
+.DS_STORE
+*.pyc
+staticfiles
+*.sqlite3
+.idea
+wsi/settings/__init__.py
+fleeter_env/
+/static/
+*.sock
+logs/
+local_settings.py

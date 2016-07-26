@@ -1,0 +1,173 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    <style>
+        th {
+            padding-bottom: 10px;
+        }
+    </style>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Vehicles</h3>
+            <div class="panel-options">
+                <span class="btn btn-success" id="export_csv">EXPORT</span>
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row" style="overflow: auto;">
+                <table class="table table-bordered">
+                    <thead>
+                    <th nowrap>
+                        <label for="chkVehicleOwner">Vehicle Owner</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="Email" id="chkVehicleOwner" checked>
+                    </th>
+                    <th nowrap>
+                        <label for="chkLicense">License</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="License" id="chkLicense" checked>
+                    </th>
+                    <th nowrap>
+                        <label for="chkOrigin">Origin</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="Origin" id="chkOrigin" checked>
+                    </th>
+                    <th nowrap>
+                        <label for="chkMake">Make</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="Make" id="chkMake" checked>
+                    </th>
+                    <th nowrap>
+                        <label for="chkModel">Model</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="Model" id="chkModel" checked>
+                    </th>
+                    <th nowrap>
+                        <label for="chkYear">Year</label>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="Year" id="chkYear" checked>
+                    </th>
+                    <th nowrap>
+                        <label>Actions</label>
+                    </th>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                        <tr pk="{{ row.pk }}">
+                            <td>
+                                {{ row.user.email }}
+                            </td>
+                            <td>
+                                {{ row.plate }}
+                            </td>
+                            <td>
+                                {{ row.formatted_address }}
+                            </td>
+                            <td>
+                                {{ row.make }}
+                            </td>
+                            <td>
+                                {{ row.model }}
+                            </td>
+                            <td>
+                                {{ row.year }}
+                            </td>
+                            <td>
+                                <span class="btn btn-danger" onclick="delete_vehicle(this);">DELETE</span>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <form class="hidden" method="GET" action="{% url 'dashboard.license_plates' %}" id="hidden_export_form">
+        <input type="hidden" name="keys" value="[]" id="export_keys">
+        <input type="hidden" name="method" value="EXPORT">
+    </form>
+{% endblock content %}
+
+{% block custom_stylesheets %}
+    <!-- Imported styles on this page -->
+    <link rel="stylesheet" href="{% static 'js/icheck/skins/all.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+{% endblock custom_stylesheets %}
+
+{% block custom_javascripts %}
+    <!-- Imported scripts on this page -->
+    <script src="{% static 'js/icheck/icheck.min.js' %}"></script>
+
+
+    <!-- JavaScripts initializations and stuff -->
+    <script src="{% static 'js/xenon-custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'libs/bootbox.js/bootbox.js' %}"></script>
+    <script type="text/javascript">
+        function delete_vehicle(obj) {
+            bootbox.dialog({
+                message: "Are you sure to delete this vehicle?",
+                title: "Delete Vehicle",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var vid = obj_parent.attr('pk');
+                            $.ajax({
+                                url: '{% url 'dashboard.license_plates' %}',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({pk: vid, method: 'DELETE'}),
+                                success: function (response) {
+                                    if (response.success == true) {
+                                        obj_parent.remove();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            $('input.icheck-1').iCheck({
+                checkboxClass: 'icheckbox_square-blue'
+            });
+
+            // export button click event
+            $("#export_csv").click(function () {
+                var key_list = [];
+
+                $('input.icheck-1').each(function () {
+                    if ($(this).get(0).checked) {
+                        key_list.push($(this).attr('vid'));
+                    }
+                });
+
+                if (key_list.length == 0) {
+                    bootbox.dialog({
+                        message: "Please check key field to export CSV!",
+                        title: "Warning",
+                        buttons: {
+                            success: {
+                                label: "CLOSE",
+                                className: "btn-warning",
+                                callback: function () {
+
+                                }
+                            }
+                        }
+                    });
+                } else {
+                    $("#export_keys").attr('value', JSON.stringify(key_list));
+                    $("#hidden_export_form").submit();
+                }
+            });
+        });
+
+    </script>
+{% endblock custom_javascripts %}

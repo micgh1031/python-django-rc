@@ -1,0 +1,55 @@
+{% block extrastyle %}{{ block.super }}
+<style type="text/css">
+.object-tools span {
+    display: block;
+    float: left;
+    color: white;
+    padding: .1em 14px .1em 8px;
+    height: 14px;
+    background: #999 url({{ admin_prefix }}img/admin/tool-right.gif) 100% 0 no-repeat;
+}
+
+.object-tools span:hover, .object-tools li:hover span {
+    background: #5b80b2 url({{ admin_prefix }}img/admin/tool-right_over.gif) 100% 0 no-repeat;
+}
+</style>{% endblock %}
+
+{% if allow %}
+	{% load i18n %}
+	<li>
+	{% if is_sent %}
+		{% if sent_date %}
+			{% if can_view %}
+				<a href="{% url mailchimp_campaign_info campaign_id %}">{% trans "Sent via mailchimp:" %}{{ sent_date }}</a>
+			{% else %}
+				<span>{% trans "Sent via mailchimp:" %}{{ sent_date }}</span>
+			{% endif %}
+		{% else %}
+			<span>{% trans "scheduled for sending via mailchimp" %}</span>
+		{% endif %}
+	{% else %}
+		<span id="send_via_mailchimp">{% trans "Send via Mailchimp to ALL subscribers of this list." %}</span>
+	</li>
+	<li>
+	{% if can_test %}
+		<a href="{% url mailchimp_test_for_object pk=primary_key content_type=content_type %}">{% trans "Send Test Mail" %}</a>
+	{% else %}
+		<span>{% trans "your account requires a valid email to send test mails" %}</span>
+	{% endif %}
+	{% endif %}
+	</li>
+{% if not is_sent %}
+<script type="text/javascript">
+django.jQuery('#send_via_mailchimp').click(
+    function(){
+  		var question = gettext("WARNING! Are you sure you want to send this news as a mailchimp campaign? An E-Mail will be sent to ALL subscribers of ALL lists you selected. This action can NOT be undone!");
+  		var answer = confirm(question);
+      	if (answer)
+        {
+            window.location = "{% url mailchimp_schedule_for_object pk=primary_key content_type=content_type %}";
+        }
+    }
+)
+</script>
+{% endif %}
+{% endif %}

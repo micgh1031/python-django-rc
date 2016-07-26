@@ -1,0 +1,39 @@
+{% load static %}
+{% load staticfiles %}
+
+
+<!-- Bottom Scripts -->
+<script src="{% static 'fleeter/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'fleeter/js/TweenMax.min.js' %}"></script>
+<script src="{% static 'fleeter/js/resizeable.js' %}"></script>
+<script src="{% static 'fleeter/js/joinable.js' %}"></script>
+<script src="{% static 'fleeter/js/xenon-api.js' %}"></script>
+<script src="{% static 'fleeter/js/xenon-toggles.js' %}"></script>
+
+
+<!-- Imported scripts on this page -->
+<script src="{% static 'fleeter/js/xenon-widgets.js' %}"></script>
+<script src="{% static 'fleeter/js/devexpress-web-14.1/js/globalize.min.js' %}"></script>
+<script src="{% static 'fleeter/js/devexpress-web-14.1/js/dx.chartjs.js' %}"></script>
+<script src="{% static 'fleeter/js/toastr/toastr.min.js' %}"></script>
+
+
+<!-- JavaScripts initializations and stuff -->
+<script src="{% static 'fleeter/js/xenon-custom.js' %}"></script>
+
+<script type="text/javascript">
+    (function ($) {
+        $('.show-detail').click(function () {
+            var plate_div = $(this).parent().parent().parent();
+            if (plate_div.hasClass('opened')) {
+                plate_div.removeClass('opened');
+                $(this).find('i').eq(0).removeClass('fa-caret-down').addClass('fa-caret-right');
+            } else {
+                plate_div.addClass('opened');
+                $(this).find('i').eq(0).removeClass('fa-caret-right').addClass('fa-caret-down');
+            }
+        });
+    })($);
+</script>
+
+{% block custom_js %}{% endblock custom_js %}

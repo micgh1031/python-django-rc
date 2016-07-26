@@ -1,0 +1,17 @@
+Dear {{ display_name }}
+\n\n
+You have been sent a message to license plate: {{ plate }}
+\n\n
+Message: {{ message }};
+\n\n
+{{ signature }}
+\n\n
+{{ gps_coords }}
+\n\n
+Sincerely,
+\n
+Your Windshieldink Team
+\n\n
+If this message contains abusive content, forward the message to abuse@windshieldink.com
+\n
+Please do not reply to this message.

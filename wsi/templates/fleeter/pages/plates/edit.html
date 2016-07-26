@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>Edit Plate</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Single</h1>
+            <div class="pull-right">
+                <button class="btn btn-default">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button class="btn btn-default">
+                    <i class="fa fa-minus-circle"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row page-content">
+            <div class="user-profile-img-container">
+                <div class="plate-name">
+                    BHBL491
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="plate">PLATE</label>
+                                    <input type="text" class="form-control" id="plate" placeholder="PLATE">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="origin">ORIGIN</label>
+                                    <input type="text" class="form-control" id="origin" name="origin"
+                                           placeholder="ORIGIN">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="email">EMAIL</label>
+                                    <input type="email" class="form-control" id="email" name="origin"
+                                           placeholder="EMAIL">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row btn-container">
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-success pull-right">SAVE</button>
+                <button type="button" class="btn btn-lg btn-danger pull-right">CANCEL</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

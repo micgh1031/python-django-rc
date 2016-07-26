@@ -1,0 +1,102 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Blacklist</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+            <table class="table table-bordered">
+                <thead>
+                <th>Email of Abuser</th>
+                <th>Blocked at</th>
+                <th>Actions</th>
+                </thead>
+                <tbody>
+                {% for row in blocked %}
+                    <tr pk="{{ row.pk }}">
+                        <td>{{ row.user.email }}</td>
+                        <td>
+                            {{ row.user.created }}
+                        </td>
+                        <td>
+                            <span class="btn btn-sm btn-success" onclick="active_account(this)">Reactive</span>
+                            <span class="btn btn-sm btn-danger" onclick="delete_account(this)">Delete</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block custom_javascripts %}
+    <script type="text/javascript" src="{% static 'libs/bootbox.js/bootbox.js' %}"></script>
+    <script type="text/javascript">
+        function active_account(obj) {
+            bootbox.dialog({
+                message: "Are you sure to re-active this user?",
+                title: "Reactive User",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var user_id = obj_parent.attr('pk');
+                            $.ajax({
+                                url: '{% url 'dashboard.blacklist' %}',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({pk: user_id, method: 'reactive'}),
+                                success: function (response) {
+                                    if (response.success == true) {
+                                        obj_parent.remove();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+        function delete_account(obj) {
+            bootbox.dialog({
+                message: "Are you sure to delete this user?<br/><span class='label label-warning'>It will delete user data!</label>",
+                title: "Delete User",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var user_id = obj_parent.attr('pk');
+                            $.ajax({
+                                url: '{% url 'dashboard.blacklist' %}',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({pk: user_id, method: 'delete'}),
+                                success: function (response) {
+                                    if (response.success == true) {
+                                        obj_parent.remove();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock custom_javascripts %}

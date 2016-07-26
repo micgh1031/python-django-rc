@@ -1,0 +1,142 @@
+{% extends 'dashboard/base.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    {% if message %}
+        <div class="row">
+            <div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <span>{{ message }}</span>
+            </div>
+        </div>
+    {% endif %}
+    <div class="panel panel-default collapsed">
+        <div class="panel-heading">
+            <h3 class="panel-title">New Notice</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <form role="form" class="form-horizontal" action="{% url 'dashboard.notice' %}" method='POST'
+                  id='notice-form'>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-1">Title</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="title" placeholder="Title" required>
+                    </div>
+                </div>
+
+                <div class="form-group-separator"></div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="field-2">Content</label>
+
+                    <div class="col-sm-10">
+                        <textarea rows="4" class="form-control" name="text" placeholder="Content" required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group-separator"></div>
+
+
+                <input type="hidden" name="pk">
+                <input type="hidden" name="method" value="SEND">
+                <div class="row text-center">
+                    <button class="btn btn-success">NOTICE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Notice History</h3>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered" id="table-messages">
+                <thead>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Notified At</th>
+                <th>#</th>
+                </thead>
+                <tbody>
+                {% for notice in notices %}
+                    <tr pk="{{ notice.pk }}">
+                        <td>{{ notice.title }}</td>
+                        <td>
+                            {{ notice.content }}
+                        </td>
+                        <td>
+                            {{ notice.created_at }}
+                        </td>
+                        <td>
+                            <span class="btn btn-sm btn-success" onclick="resend_notice(this);">RESEND</span>
+                            <span class="btn btn-sm btn-danger" onclick="delete_notice(this);">DELETE</span>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block custom_javascripts %}
+    <script type="text/javascript" src="{% static 'libs/bootbox.js/bootbox.js' %}"></script>
+    <script type="text/javascript">
+        function resend_notice(obj) {
+            bootbox.dialog({
+                message: "Do you want to resend this notice?",
+                title: "Resend Notice",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var notice_id = obj_parent.attr('pk');
+                            var notice_form = $("#notice-form");
+                            notice_form.find('input[name="pk"]').val(notice_id);
+                            notice_form.find('input[name="title"]').val(obj_parent.find('td').eq(0).html());
+                            notice_form.find('textarea[name="text"]').get(0).innerHTML = obj_parent.find('td').eq(1).html();
+                            notice_form.get(0).submit();
+                        }
+                    }
+                }
+            });
+        }
+
+        function delete_notice(obj) {
+            bootbox.dialog({
+                message: "Are you sure to delete?",
+                title: "Delete Notice",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var notice_id = obj_parent.attr('pk');
+                            var notice_form = $("#notice-form");
+                            notice_form.find('input[name="pk"]').val(notice_id);
+                            notice_form.find('input[name="method"]').val('DELETE');
+                            notice_form.get(0).submit();
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+{% endblock custom_javascripts %}

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>Enter number of slots required</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Variable pricing</h1>
+        </div>
+        <div class="row billing-variable-page">
+            <div class="col-md-6">
+                <div class="checkout-form">
+                    <div class="header">
+                        <span>SELECT LICENSE PLATES SLOTS NEEDED</span>
+                    </div>
+                    <div class="content">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>NUMBER OF PLATES</label>
+                                <input type="text" class="form-control plates" placeholder="130">
+                            </div>
+                            <div class="">
+                                <div class="price-line">
+                                    <label>COST PER PLATE</label>
+                                    <div class="pull-right">
+                                        <span class="dollar">$</span>
+                                        <span class="price-number">123</span>
+                                    </div>
+                                </div>
+                                <div class="price-line">
+                                    <label>COST PER PLATE PER YEAR</label>
+                                    <div class="pull-right">
+                                        <span class="dollar">$</span>
+                                        <span class="price-number">3120.00</span>
+                                    </div>
+                                </div>
+                                <div class="button-line">
+                                    <div class="pull-right">
+                                        <button class="btn btn-success">
+                                            CHECK OUT <i class="fa fa-shopping-basket"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="price-line">
+                                    <label>YOUR FLEET COST PER MONTH</label>
+                                    <div class="pull-right">
+                                        <span class="dollar">$</span>
+                                        <span class="price-number">3120.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="help">
+                    <div class="icon-container">
+                        <i class="fa fa-building-o"></i>
+                    </div>
+                    <div class="plan-name">
+                        <span>Enterprise</span>
+                    </div>
+                    <div class="plan-desc">
+                        <p>Do you require more than 500 plates?</p>
+                        <p>Contact us directly for pricing <span class="email">pricing@windshieldink.com</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

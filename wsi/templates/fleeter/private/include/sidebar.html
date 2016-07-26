@@ -1,0 +1,108 @@
+{% load static %}
+{% load staticfiles %}
+
+<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
+<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
+<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
+<div class="sidebar-menu toggle-others fixed">
+
+    <div class="sidebar-menu-inner">
+
+        <header class="logo-env">
+
+            <!-- logo -->
+            <div class="logo">
+                <a href="dashboard-1.html" class="logo-expanded">
+                    <img src="{% static 'img/logo.png' %}" width="80" alt=""/>
+                </a>
+
+                <a href="dashboard-1.html" class="logo-collapsed">
+                    <img src="{% static 'img/logo.png' %}" width="40" alt=""/>
+                </a>
+            </div>
+
+            <!-- This will toggle the mobile menu and will be visible only on mobile devices -->
+            <div class="mobile-menu-toggle visible-xs">
+                <a href="#" data-toggle="user-info-menu">
+                    <i class="fa-bell-o"></i>
+                    <span class="badge badge-success">0</span>
+                </a>
+
+                <a href="#" data-toggle="mobile-menu">
+                    <i class="fa-bars"></i>
+                </a>
+            </div>
+
+            <!-- This will open the popup with user profile settings, you can use for any purpose, just be creative -->
+            <div class="settings-icon">
+                <a href="#" data-toggle="settings-pane" data-animate="true">
+                    <i class="linecons-cog"></i>
+                </a>
+            </div>
+
+        </header>
+
+
+        <ul id="main-menu" class="main-menu">
+
+            <li class="{% if page == 'upload' %}active{% endif %}">
+                <a href="{% url 'upload_csv' %}">
+                    <i class="linecons-database"></i>
+                    <span class="title">Upload CSV</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="linecons-mail"></i>
+                    <span class="title">Mailbox</span>
+                    {% comment %}<span class="label label-success pull-right"></span>{% endcomment %}
+                </a>
+                <ul>
+                    <li>
+                        <a href="mailbox-main.html">
+                            <span class="title">Inbox</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailbox-compose.html">
+                            <span class="title">Compose Message</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailbox-message.html">
+                            <span class="title">View Message</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="linecons-cog"></i>
+                    <span class="title">Settings</span>
+                </a>
+                <ul>
+                    <li>
+                        <a href="dashboard-1.html">
+                            <span class="title">Manage CSVs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-2.html">
+                            <span class="title">License Plates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="dashboard-3.html">
+                            <span class="title">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </div>
+
+</div>

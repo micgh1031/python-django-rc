@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="">
+        <div class="row">
+            <div class="page-title-container search-form">
+                <form method="get" action="" enctype="application/x-www-form-urlencoded">
+                    <div class="input-group input-group-sm input-group-minimal">
+                            <span class="input-group-addon">
+                                <i class="linecons-search"></i>
+                            </span>
+                        <input type="text" class="form-control"
+                               placeholder="Search: Plate number, origin or email ...">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">All</h1>
+            <div class="pull-right">
+                <button class="btn btn-default" onclick="changeLayout('item')">
+                    <i class="fa fa-th-large"></i>
+                </button>
+                <button class="btn btn-default" onclick="changeLayout('list')">
+                    <i class="fa fa-th-list"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row plates-page">
+            <div class="plate-item-row">
+                <div class="plate-items col-md-6">
+                    <div class="plate-item">
+                        <div class="plate-name">
+                            BH2016
+                        </div>
+                        <div class="plate-item-detail-name">
+                            <div class="name">name</div>
+                            <div>email@email.com</div>
+                        </div>
+                        <div class="plate-item-tail">
+                            <a href="plate_edit.html"><i class="fa fa-caret-right"></i></a>
+                        </div>
+                        <div class="plate-item-detail-origin">
+                            Origin
+                        </div>
+                    </div>
+                </div>
+                <div class="plate-items col-md-6">
+                    <div class="plate-item">
+                        <div class="plate-name">
+                            BH2016
+                        </div>
+                        <div class="plate-item-detail-name">
+                            <div class="name">name</div>
+                            <div>email@email.com</div>
+                        </div>
+                        <div class="plate-item-tail">
+                            <i class="fa fa-caret-right"></i>
+                        </div>
+                        <div class="plate-item-detail-origin">
+                            Origin
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <button class="btn btn-load-more">MORE</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

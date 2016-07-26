@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block sidebar %}{% endblock %}
+{% block navbar %}
+    {% include 'include/navbar_login.html' %}
+{% endblock navbar %}
+{% block content %}
+    <div class="login-page">
+        <div class="row page-content">
+            <div class="user-profile-img-container">
+                <img class="img-circle" src="/static/images/user-1.png">
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="login-form">
+                    <div class="panel panel-color panel-main">
+                        <div class="panel-heading">
+                            Sign In to Fleeter
+                        </div>
+                        <div class="panel-body">
+                            <form role="form">
+
+                                <div class="form-group">
+                                    <label for="email-1">EMAIL ADDRESS</label>
+                                    <input type="email" class="form-control" id="email-1"
+                                           placeholder="Enter your email&hellip;">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password-1">PASSWORD</label>
+                                    <input type="password" class="form-control" id="password-1"
+                                           placeholder="Enter your password">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>
+                                        <input type="checkbox" class="cbr" checked>
+                                        Stay signed in
+                                    </label>
+                                    <button type="button" class="btn btn-lg btn-success pull-right"
+                                            onclick="location.href='index.html'">
+                                        SIGN IN
+                                        &nbsp;
+                                        <i class="fa fa-lock"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#">Forgot your password ?</a>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+{% endblock content %}

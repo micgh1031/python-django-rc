@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windshieldink - Activated</title>
+    <script>
+        function loaded() {
+            window.setTimeout(CloseMe, 10000);
+        }
+
+        function CloseMe() {
+            window.close();
+        }
+    </script>
+</head>
+<body onLoad="loaded()">
+<h1>{{ message }}</h1>
+<div>
+    <a href="javascript:;" onclick="CloseMe()">Close</a>
+</div>
+</body>
+</html>

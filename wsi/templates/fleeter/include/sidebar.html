@@ -1,0 +1,109 @@
+{% load static %}
+{% load staticfiles %}
+
+<div class="sidebar-menu toggle-others fixed">
+    <div class="sidebar-menu-inner">
+        <header class="logo-env">
+            <div class="user-info">
+                <div class="user-image">
+                    <a href="login.html">
+                        <img src="/static/images/user-2.png" class="img-responsive img-circle logo-img"/>
+                    </a>
+                </div>
+                <div class="user-details">
+                </div>
+            </div>
+            <h1 class="text-center">WINDSHIELDINK</h1>
+        </header>
+        <ul id="main-menu" class="main-menu">
+            <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+            <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+            <li {% if page == 'index' %}class="active opened active"{% endif %}>
+                <a href="{% url 'biz.dashboard' %}">
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li {% if page == 'plates' %}class="active opened active"{% endif %}>
+                <a href="{% url 'biz.plates' %}">
+                    <span class="title">Plates</span>
+                </a>
+            </li>
+            <li {% if page == 'company' %}class="active opened active"{% endif %}>
+                <a href="{% url 'biz.company' %}">
+                    <span class="title">Company</span>
+                </a>
+            </li>
+
+            <li class="last {% if page == 'settings' %}active opened active{% endif %}" >
+                <a href="{% url 'fleeter.user.profile' %}">
+                    <span class="title">Settings</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="panel-info">
+            <li class="info-title">
+                <span>
+                    COMPANY NUMBER
+                </span>
+            </li>
+            <li class="detail">
+                123 456 789
+            </li>
+            <li class="info-title">
+                <span>
+                    DATE MODIFIED
+                </span>
+            </li>
+            <li class="detail">
+                Monday, May, 2016
+            </li>
+            <li class="info-title">
+                <span>
+                    PLAN
+                </span>
+            </li>
+            <li class="detail">
+                Basic
+            </li>
+            <li class="progress-container">
+                <div class="progress progress-striped">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="80"
+                         aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                </div>
+            </li>
+            <li class="detail">
+                Number of License Plates = 100
+            </li>
+            <li class="detail">
+                Number of License Plates = 100
+            </li>
+            <li class="detail">
+                Number of License Plates = 100
+            </li>
+            <li class="info-title">
+                <button class="btn btn-success">BUY SLOTS</button>
+            </li>
+            <li class="info-company">
+                Powered by Windshieldink
+            </li>
+        </ul>
+
+        <ul class="info-help">
+            <li>
+                <i class="glyphicon glyphicon-question-sign"></i>
+                <span>
+                    Help
+                </span>
+            </li>
+            <li>
+                <span class="email">
+                    support@windshieldink.com
+                </span>
+            </li>
+        </ul>
+    </div>
+
+</div>

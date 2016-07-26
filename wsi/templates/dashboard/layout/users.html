@@ -1,0 +1,130 @@
+{% extends 'dashboard/base_angular.html' %}
+
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="panel panel-default" ng-controller="UserController as vm">
+        <div class="panel-heading">
+            <h3 class="panel-title">Users</h3>
+            <div class="panel-options">
+                <span class="btn btn-success btn-sm" ng-click="vm.export_users()">EXPORT</span>
+            </div>
+            <form class="hidden" method="GET" action="{% url 'dashboard.users' %}" id="hidden_export_form">
+                <input type="hidden" name="keys" value="[]" id="export_keys">
+                <input type="hidden" name="method" value="export">
+            </form>
+        </div>
+        <div class="panel-body ">
+            <div class="row" style="margin-bottom: 10px;">
+                <label>Search :&nbsp;</label><input type="text" class="form-contrl" ng-model="vm.filterText">
+            </div>
+            <div class="row" style="overflow: auto;max-height: 560px;">
+                <div ng-if="vm.users.length <= 0">Loading new data!!</div>
+                <table class="table table-bordered table-small-font" id="table-users" ng-cloak>
+                    <thead>
+                    <th nowrap>
+                        <span>Email</span>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="0" ng-model="vm.export[0].checked" checked>
+                    </th>
+                    <th nowrap>
+                        <span>Nick Name</span>&nbsp;
+                        <input type="checkbox" class="icheck-1" vid="1" ng-model="vm.export[1].checked" checked>
+                    </th>
+                    <th nowrap>
+                        City&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="2" ng-model="vm.export[2].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Phone&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="3" ng-model="vm.export[3].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Receiving Email&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="4" ng-model="vm.export[4].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Receiving Push&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="5" ng-model="vm.export[5].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Receiving SMS&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="6" ng-model="vm.export[6].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Signature&nbsp;
+                        <input type="checkbox" class="icheck-1"  vid="7" ng-model="vm.export[7].checked" checked>
+                    </th>
+                    <th nowrap>
+                        Status
+                    </th>
+                    <th nowrap>
+                        Created at
+                    </th>
+                    <th nowrap>
+                        Actions
+                    </th>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="user in vm.filterUsers()">
+                        <td nowrap>[[ user.email ]]</td>
+                        <td nowrap>[[ user.display_name ]]</td>
+                        <td nowrap>[[ user.city ]]</td>
+                        <td nowrap>[[ user.phone ]]</td>
+                        <td nowrap class="text-center">
+                            <span class="label label-success" ng-if="user.recv_email">ON</span>
+                            <span class="label label-warning" ng-if="!user.recv_email">OFF</span>
+                        </td>
+                        <td class="text-center">
+                            <span class="label label-success" ng-if="user.recv_push">ON</span>
+                            <span class="label label-warning" ng-if="!user.recv_push">OFF</span>
+                        </td>
+                        <td nowrap>
+                            <span class="label label-success" ng-if="user.recv_sms">ON</span>
+                            <span class="label label-warning" ng-if="!user.recv_sms">OFF</span>
+                        </td>
+                        <td nowrap>[[ user.signature ]]</td>
+                        <td nowrap>
+                            <span class="label label-warning" ng-if="user.is_blocked">BLOCKED</span>
+                            <span class="label label-info"
+                                  ng-if="(!user.is_active) && (!user.is_blocked)">PENDING</span>
+                            <span class="label label-success"
+                                  ng-if="(user.is_active) && (!user.is_blocked)">ACTIVE</span>
+                        </td>
+                        <td nowrap>[[ user.created*1000 | date:'MMM/dd/yyyy HH:mm:ss' ]]</td>
+                        <td nowrap>
+                            <span class="btn btn-danger btn-sm btn-icon icon-left"
+                                  ng-if="user.is_blocked" ng-click="vm.delete_user(user._id)">DELETE</span>
+                            <span class="btn btn-danger btn-sm btn-icon icon-left"
+                                  ng-if="!user.is_blocked" ng-click="vm.report_block(user._id)">BLOCK</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block custom_stylesheets %}
+    <!-- Imported styles on this page -->
+    <link rel="stylesheet" href="{% static 'js/icheck/skins/all.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+{% endblock custom_stylesheets %}
+
+{% block custom_javascripts %}
+    <!-- Imported scripts on this page -->
+    <script src="{% static 'js/icheck/icheck.min.js' %}"></script>
+    <!-- Imported scripts on this page -->
+    <script src="{% static 'js/datatables/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'js/datatables/yadcf/jquery.dataTables.yadcf.js' %}"></script>
+    <script src="{% static 'js/datatables/tabletools/dataTables.tableTools.min.js' %}"></script>
+
+    <!-- JavaScripts initializations and stuff -->
+    <script src="{% static 'js/xenon-custom.js' %}"></script>
+    <script type="text/javascript" src="{% static 'libs/bootbox.js/bootbox.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'app/users/controllers/users.controller.js' %}"></script>
+{% endblock %}

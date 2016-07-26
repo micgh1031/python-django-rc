@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="alert alert-success">
+        Update successfully!
+        <i class="fa fa-check"></i>
+    </div>
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>Edit and update user profile</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Edit Profile</h1>
+        </div>
+        <div class="row page-content">
+            <div class="user-profile-img-container">
+                <img class="img-circle" src="/static/images/user-1.png">
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="fullname">FULL NAME </label>
+                                    <input type="text" class="form-control" id="fullname" placeholder="Full name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="email">EMAIL ADDRESS</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="phone">YOUR MOBILE NUMBER</label>
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                           placeholder="Phone Number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="password">CURRENT PASSWORD</label>
+                                    <input type="text" class="form-control" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="new_password">NEW PASSWORD</label>
+                                    <input type="password" class="form-control" id="new_password"
+                                           placeholder="New Password">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="conf_password">NEW PASSWORD CONFIRMATION</label>
+                                    <input type="password" class="form-control" id="conf_password"
+                                           placeholder="Confirm New Password">
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row btn-container">
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-success pull-right">SAVE</button>
+                <button type="button" class="btn btn-lg btn-danger pull-right">CANCEL</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

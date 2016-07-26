@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>Tell us about your workplace</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Company Info</h1>
+        </div>
+        <div class="row page-content company-page">
+            <div class="user-profile-img-container">
+                <img class="img-circle" src="/static/images/user-1.png">
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="row col-md-12">
+                            <div class="form-group">
+                                <label>Required Field</label><span class="required-star">*</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_name">COMPANY NAME </label>
+                                    <input type="text" class="form-control" id="company_name" name="company_name"
+                                           placeholder="Company Name">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_email">COMPANY EMAIL</label>
+                                    <input type="email" class="form-control" id="company_email"
+                                           placeholder="Company Email">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_phone">HQ PHONE</label>
+                                    <input type="text" class="form-control" id="company_phone" name="company_phone"
+                                           placeholder="Company Phone">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_address">HQ ADDRESS</label>
+                                    <input type="text" class="form-control" id="company_address" name="company_address"
+                                           placeholder="Company Address">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_phone">PROVINCE</label>
+                                    <select class="form-control" name="company_province">
+                                        <option>ORIGIN</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="company_country">COUNTRY</label>
+                                    <select name="company_country" class="form-control" id="company_country">
+                                        <option value="canada">Canada</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="po_number">COMPANY INTERNAL P.O. NUMBER</label>
+                                    <input type="text" class="form-control" id="po_number" name="po_number"
+                                           placeholder="3546789">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="vendor_num">VENDOR NUMBER (INTERNAL)</label>
+                                    <input type="text" class="form-control" name="vendor_num" id="vendor_num"
+                                           placeholder="00385665">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="postal_code">POSTAL CODE</label>
+                                    <input type="text" name="postal_code" class="form-control" id="postal_code"
+                                           placeholder="M1B 2A6">
+                                    <span class="required">*</span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="company_sites">SITES</label>
+                                    <select class="form-control" name="company_sites" id="company_sites">
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 row upload-form">
+                            <div class="form-group">
+                                <label>COMPANY LOGO</label>
+                                <div class="col-md-12 form-container">
+                                    <div>
+                                        <div id="advancedDropzone" class="droppable-area dz-clickable"
+                                             style="min-height: 200px;">
+                                            <i class="fa fa-plus"></i>
+                                        </div>
+                                    </div>
+                                    <div class="description">
+                                        <p>We recommend uploading a transparent PNG
+                                            cropped and up to 600px wide and 600px tall. </p>
+                                        <div class="btn-container">
+                                            <button class="btn btn-success">CHOOSE FILE</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row btn-container">
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-success pull-right">SAVE</button>
+                <button type="button" class="btn btn-lg btn-danger pull-right">CANCEL</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+Click this link to activate your WindshieldInk SMS number http://{{ server_addr }}/api/v2/verify_phone?challenge={{ challenge }}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="alert alert-success">
+        Update successfully!
+        <i class="fa fa-check"></i>
+    </div>
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>Invite a team member and manager authorization</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Add user</h1>
+            <div class="pull-right">
+                <button class="btn btn-default">
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button class="btn btn-default">
+                    <i class="fa fa-minus-circle"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row page-content">
+            <div class="user-profile-img-container">
+                <img class="img-circle" src="/static/images/user-1.png">
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form role="form">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="fullname">FULL NAME </label>
+                                    <input type="text" class="form-control" id="fullname" placeholder="Full name">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="email">EMAIL ADDRESS</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email address">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="acc_type">ACCOUNT TYPE</label>
+                                    <select class="form-control" id="acc_type" name="acc_type">
+                                        <option value="0">Dispatcher</option>
+                                        <option value="1">Administrator</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="row btn-container">
+            <div class="form-group">
+                <button type="button" class="btn btn-lg btn-success pull-right">SEND INVITE</button>
+                <button type="button" class="btn btn-lg btn-danger pull-right">CANCEL</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

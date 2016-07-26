@@ -1,0 +1,13 @@
+A Windshieldink message recipient has reported an account for abusive communication.
+\n
+Complainant: {{ from_email }}
+\n
+Message: {{ message }}
+\n
+Date & Time of Complaint: {{ abusive_date }}
+\n
+Abusive Message Sender: {{ abusive_email }}
+\n
+Windshieldink will terminate the abusive user account and place the user email address on a user address blacklist.
+\n
+Windshieldink

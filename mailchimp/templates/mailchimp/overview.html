@@ -1,0 +1,85 @@
+{% extends "admin/change_list.html" %}
+{% load i18n admin_modify adminmedia mailchimp_admin_tags %}
+
+{% block bodyclass %}change-list{% endblock %}
+
+{% block breadcrumbs %}{% if not is_popup %}
+<div class="breadcrumbs">
+     <a href="{% url admin:index %}">{% trans "Home" %}</a> &rsaquo;
+     {% trans "mailchimp overview" %}
+</div>
+{% endif %}{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+  <div id="content-main">
+    {% block object-tools %}
+    {% endblock %}
+    <h2>{% trans "Log" %}</h2>
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+		<table cellspacing="0">
+		<thead>
+			<tr>
+				<th{{ header.class_attrib }}>{% trans "Subject" %}</th>
+				<th{{ header.class_attrib }}>{% trans "Sent Date" %}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for camp in paginator.objects %}
+		<tr class="{% cycle 'row1' 'row2' %}">
+			<th><a href="{{ camp.get_absolute_url }}">{{ camp.mc.subject }}</a></th>
+			<td>{{ camp.sent_date }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+		</table>
+		{% if paginator.has_pages %}
+		<p class="paginator">
+		{% if not paginator.is_first %}
+			<a href="{{ paginator.first_bullet.link }}">{% trans "First" %}</a>
+		{% endif %}
+		{% for bullet in paginator.bullets %}
+			{% if bullet.active %}
+				<span class="this-page">{{ bullet.number }}</span>
+			{% else %}
+				<a href="bullet.link">{{ bullet.number }}</a>
+			{% endif %}
+		{% endfor %}
+		{% if not paginator.is_last %}
+			<a href="{{ paginator.last_bullet.link }}">{% trans "Last" %}</a>
+		{% endif %}
+		</p>
+		{% endif %}
+    </div>
+    <h2>{% trans "Queue" %}</h2>
+    <div class="module{% if cl.has_filters %} filtered{% endif %}" id="changelist">
+		<table cellspacing="0">
+		<thead>
+			<tr>
+				<th{{ header.class_attrib }}>{% trans "Subject" %}</th>
+				<th{{ header.class_attrib }}>{% trans "Actions" %}</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for obj in queue %}
+		<tr class="{% cycle 'row1' 'row2' %}">
+			<th><a href="{{ obj.get_object_admin_url }}">{{ obj.subject }}</a> <span class="via">{% trans "via" %} {{ obj.get_list.name }} ({{ obj.get_list.id }})</span></th>
+			<td>{% if request.user|can_dequeue:obj %}<a href="{{ obj.get_dequeue_url }}">{% trans "Send Now!" %}</a> | <a href="{{ obj.get_cancel_url }}">{% trans "Cancel!" %}</a>{% else %}&nbsp;{% endif %}</td>
+		</tr>
+		{% empty %}
+		<tr class="row1"><td colspan="2">{% trans "No Campaigns in the Queue" %}</td></tr>
+		{% endfor %}
+		</tbody>
+		</table>
+    </div>
+  </div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('span.recipients').each(function(){
+		var span = $(this);
+		var pk = span.attr('id').split('_', 1)[1];
+	});
+});
+</script>
+{% endblock %}

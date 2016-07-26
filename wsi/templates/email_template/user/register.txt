@@ -1,0 +1,13 @@
+Dear {{ display_name }},
+\n\n
+Thank you for registering with Windshieldink! Please activate your account by clicking on the link below.
+\n\n
+http://{{ server_addr }}/api/v2/activate?challenge={{ challenge }}
+\n\n
+Sincerely,
+\n\n
+Your Windshieldink Team
+\n\n
+Need Help? E-mail support@windshieldink.com\n
+\n
+Visit us at windshieldink.com

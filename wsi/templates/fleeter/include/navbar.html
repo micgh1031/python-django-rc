@@ -1,0 +1,43 @@
+{% load static %}
+
+<nav class="navbar user-info-navbar" role="navigation"><!-- User Info, Notifications and Menu Bar -->
+    <ol class="breadcrumb bc-1">
+        <li>
+            <a href="#">Dashboard</a>
+        </li>
+    </ol>
+
+    <!-- Right links for user info navbar -->
+    <ul class="user-info-menu right-links list-inline list-unstyled">
+
+        <li class="dropdown user-profile">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span>
+                    Arlind Nushi
+                    <p>Administrator</p>
+                </span>
+
+                <img src="/static/images/user-4.png" alt="user-image"
+                     class="img-circle img-inline userpic-32"
+                     width="28"/>
+            </a>
+
+            <ul class="dropdown-menu user-profile-menu list-unstyled">
+                <li class="last">
+                    <a href="login.html">
+                        <i class="fa-lock"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#" data-toggle="chat">
+                <i class="fa-bell-o"></i>
+            </a>
+        </li>
+
+    </ul>
+
+</nav>

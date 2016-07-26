@@ -1,0 +1,909 @@
+/**
+ *
+ * Apply your custom CSS here
+ *
+*/
+/* line 6, ../sass/custom.scss */
+body {
+  font-size: 12px;
+  color: #666666;
+}
+
+/* line 11, ../sass/custom.scss */
+h1 {
+  font-size: 20px;
+  font-family: "Open Sans";
+}
+
+/* line 16, ../sass/custom.scss */
+h2 {
+  font-size: 18px;
+}
+
+/* line 20, ../sass/custom.scss */
+.logo-img {
+  width: 100%;
+  padding: 24px;
+}
+
+/* line 25, ../sass/custom.scss */
+.sidebar-menu {
+  font-family: "Montserrat";
+}
+/* line 27, ../sass/custom.scss */
+.sidebar-menu .logo-env {
+  padding: 0 36px;
+}
+/* line 28, ../sass/custom.scss */
+.sidebar-menu .logo-env h1 {
+  color: #FFFFFF;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+/* line 35, ../sass/custom.scss */
+.sidebar-menu .main-menu {
+  padding-left: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #6A7684;
+}
+
+/* line 42, ../sass/custom.scss */
+.panel-info {
+  color: #8a96a2;
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 12px;
+  font-family: "Montserrat";
+  border-bottom: 1px solid #6A7684;
+  padding-bottom: 5px;
+}
+/* line 43, ../sass/custom.scss */
+.panel-info .progress-container {
+  padding-right: 30px;
+  margin-top: 30px;
+}
+/* line 54, ../sass/custom.scss */
+.panel-info li.info-title {
+  margin-top: 30px;
+}
+/* line 57, ../sass/custom.scss */
+.panel-info li {
+  display: list-item;
+  list-style-type: none;
+}
+/* line 61, ../sass/custom.scss */
+.panel-info li.detail {
+  font-family: "Open Sans";
+  color: #ecf0f1;
+  line-height: 12px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+/* line 70, ../sass/custom.scss */
+.main-content {
+  padding-bottom: 20px;
+  background-color: #EcF2F6;
+}
+
+/* line 77, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li > a {
+  padding: 5px;
+}
+/* line 79, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li > a > span {
+  margin-top: 5px;
+  text-align: right;
+  line-height: 18px;
+  font-weight: bold;
+  color: #666666;
+}
+/* line 85, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li > a > span > p {
+  font-weight: normal;
+}
+/* line 89, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li > a i {
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+/* line 95, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li .dropdown-menu.user-profile-menu {
+  width: 180px;
+}
+/* line 100, ../sass/custom.scss */
+.user-info-navbar .user-info-menu > li.user-profile .userpic-32 {
+  top: 0;
+  margin-left: 10px;
+}
+
+/* line 108, ../sass/custom.scss */
+.btn {
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+/* line 113, ../sass/custom.scss */
+.info-company {
+  bottom: 0;
+  padding-right: 20px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* line 120, ../sass/custom.scss */
+.info-help {
+  padding-left: 20px;
+}
+/* line 122, ../sass/custom.scss */
+.info-help li {
+  display: list-item;
+  list-style-type: none;
+}
+/* line 125, ../sass/custom.scss */
+.info-help li > i {
+  color: #fff;
+}
+/* line 128, ../sass/custom.scss */
+.info-help li > span {
+  margin-left: 10px;
+}
+/* line 131, ../sass/custom.scss */
+.info-help li > span.email {
+  padding-left: 16px;
+  color: #fff;
+}
+
+/* line 138, ../sass/custom.scss */
+.breadcrumb {
+  color: #47505a;
+  float: left;
+  font-size: 20px;
+  margin-top: 10px;
+  padding-bottom: 0;
+  margin-left: 20px;
+  font-family: "Montserrat";
+}
+/* line 146, ../sass/custom.scss */
+.breadcrumb > .active {
+  color: #ecf0f1;
+}
+/* line 152, ../sass/custom.scss */
+.breadcrumb > li + li:before {
+  color: #ecf0f1;
+}
+/* line 159, ../sass/custom.scss */
+.breadcrumb li.active > * {
+  color: #ecf0f1;
+  font-weight: normal;
+}
+
+/* line 166, ../sass/custom.scss */
+.alert-success {
+  background-color: #7ed321;
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* line 176, ../sass/custom.scss */
+.alert-danger {
+  margin-left: -30px;
+  margin-right: -30px;
+  margin-top: -30px;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* line 185, ../sass/custom.scss */
+.btn-success {
+  background-color: #7ed321;
+}
+
+/* line 189, ../sass/custom.scss */
+.page-title-container {
+  margin: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #8a96a2;
+  font-family: "Montserrat";
+}
+
+/* line 197, ../sass/custom.scss */
+h1.title {
+  font-family: "Open Sans";
+  font-size: 20px;
+  display: inline-block;
+}
+
+/* line 203, ../sass/custom.scss */
+.page-content {
+  background-color: #ffffff;
+}
+
+/* line 207, ../sass/custom.scss */
+.user-profile-page {
+  padding: 65px 10px 65px 10px;
+  position: relative;
+  min-height: 60px;
+}
+
+/* line 213, ../sass/custom.scss */
+.user-profile-img-container {
+  text-align: center;
+  position: relative;
+}
+/* line 216, ../sass/custom.scss */
+.user-profile-img-container img {
+  width: 80px;
+  z-index: 1;
+  height: 80px;
+  position: absolute;
+  top: -40px;
+  margin-left: -40px;
+}
+/* line 225, ../sass/custom.scss */
+.user-profile-img-container .plate-name {
+  padding: 30px 20px 30px 20px;
+  min-width: 240px;
+  left: -120px;
+  background-color: #384047;
+  font-size: 18px;
+  font-family: "Montserrat";
+  width: auto;
+  color: #ffffff;
+  margin-top: -36px;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* line 240, ../sass/custom.scss */
+label {
+  font-family: "Open Sans";
+  font-size: 12px;
+}
+
+/* line 245, ../sass/custom.scss */
+input {
+  font-family: "Open Sans";
+  font-size: 12px;
+  color: #000;
+}
+
+/* line 251, ../sass/custom.scss */
+select {
+  font-family: "Open Sans";
+  font-size: 12px;
+  color: #000;
+}
+
+/* line 257, ../sass/custom.scss */
+.btn-container {
+  margin-top: 10px;
+}
+/* line 259, ../sass/custom.scss */
+.btn-container .btn {
+  margin-left: 10px;
+}
+
+/* line 264, ../sass/custom.scss */
+.login-btn-container {
+  margin-top: 10px;
+  margin-right: 30px;
+  vertical-align: middle;
+}
+/* line 268, ../sass/custom.scss */
+.login-btn-container span {
+  vertical-align: top;
+  color: #000000;
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* line 277, ../sass/custom.scss */
+.fa {
+  font-size: 14px !important;
+}
+
+/* line 281, ../sass/custom.scss */
+.login-page {
+  background-color: transparent;
+  padding-top: 80px;
+}
+/* line 284, ../sass/custom.scss */
+.login-page a {
+  color: #40bbea;
+}
+/* line 287, ../sass/custom.scss */
+.login-page .login-form {
+  padding: 0;
+  margin-top: 80px;
+}
+
+/* line 294, ../sass/custom.scss */
+.login-form .panel {
+  margin-top: 50px;
+}
+
+/* line 300, ../sass/custom.scss */
+.panel.panel-main .panel-heading {
+  background-color: #354052;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+/* line 308, ../sass/custom.scss */
+.page-title-container.search-form {
+  padding-left: 120px;
+  padding-right: 120px;
+}
+/* line 311, ../sass/custom.scss */
+.page-title-container.search-form .input-group-addon {
+  background-color: #ffffff;
+}
+
+/* line 316, ../sass/custom.scss */
+.btn-load-more {
+  background: #354052;
+  color: #ffffff;
+}
+
+/* line 321, ../sass/custom.scss */
+.btn-load-more:hover {
+  color: #ffffff;
+}
+
+/* line 326, ../sass/custom.scss */
+.dashboard-page-content .panel {
+  padding: 0;
+}
+/* line 330, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-heading {
+  padding-top: 10px;
+  padding-left: 0;
+  padding-bottom: 10px;
+  padding-right: 0;
+  margin: 0;
+}
+/* line 336, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-heading span {
+  color: #ffffff;
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 2.0em;
+  font-family: "Montserrat";
+}
+/* line 344, ../sass/custom.scss */
+.dashboard-page-content .panel-main span.comment {
+  color: #8a96a2;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* line 349, ../sass/custom.scss */
+.dashboard-page-content .panel-main span.number {
+  font-family: "Open Sans";
+}
+/* line 352, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body {
+  color: #8a96a2;
+  padding: 0;
+  background-color: transparent;
+}
+/* line 356, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ecf0f1;
+}
+/* line 360, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row span {
+  padding-left: 20px;
+}
+/* line 363, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row span.plate {
+  font-weight: bold;
+  color: #000000;
+  font-family: "Montserrat";
+}
+/* line 368, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row i {
+  padding-right: 30px;
+  color: #000000;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* line 374, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row .plate-detail {
+  display: none;
+}
+/* line 378, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row.opened {
+  background-color: #f7f7f7;
+}
+/* line 380, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row.opened .plate-detail {
+  display: block;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 0;
+  padding-right: 10px;
+  font-family: "Montserrat";
+}
+/* line 387, ../sass/custom.scss */
+.dashboard-page-content .panel-main .panel-body .plate-row.opened .plate-detail div {
+  margin-top: 5px;
+}
+
+/* line 396, ../sass/custom.scss */
+.form-control {
+  color: #000;
+}
+
+/* line 401, ../sass/custom.scss */
+.plates-page .plate-item-row {
+  margin-bottom: 30px;
+  vertical-align: top;
+  width: 100%;
+  display: inline-block;
+}
+/* line 406, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item {
+  width: 100%;
+  margin-bottom: 20px;
+  height: 57px;
+  vertical-align: top;
+  background-color: #ffffff;
+  font-family: "Montserrat";
+  display: inline-block;
+}
+/* line 414, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item .plate-name {
+  height: 100%;
+  float: left;
+  vertical-align: middle;
+  background-color: #354052;
+  color: #ffffff;
+  padding: 20px 20px 20px 20px;
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+}
+/* line 425, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item .plate-item-detail-name {
+  padding-left: 10px;
+  display: inline-block;
+}
+/* line 428, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item .plate-item-detail-name .name {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+/* line 433, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item .plate-item-detail-origin {
+  float: right;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+/* line 438, ../sass/custom.scss */
+.plates-page .plate-item-row .plate-item .plate-item-tail {
+  float: right;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* line 448, ../sass/custom.scss */
+.plate-upload-page .description {
+  background-color: #FFFFFF;
+  height: 360px;
+}
+/* line 451, ../sass/custom.scss */
+.plate-upload-page .description .header {
+  border-bottom: 1px solid #ecf2f6;
+}
+/* line 453, ../sass/custom.scss */
+.plate-upload-page .description .header .template-link {
+  display: inline-block;
+  padding-left: 20px;
+}
+/* line 456, ../sass/custom.scss */
+.plate-upload-page .description .header .template-link a {
+  color: #6ba0f9;
+}
+/* line 460, ../sass/custom.scss */
+.plate-upload-page .description .header span.cloud-icon {
+  display: inline-block;
+  color: white;
+  background-color: #354052;
+}
+/* line 464, ../sass/custom.scss */
+.plate-upload-page .description .header span.cloud-icon .fa {
+  color: #FFFFFF;
+  font-size: 24px !important;
+  padding: 20px 30px 20px 30px;
+}
+/* line 472, ../sass/custom.scss */
+.plate-upload-page .description .content {
+  font-family: "Open Sans";
+}
+/* line 474, ../sass/custom.scss */
+.plate-upload-page .description .content p {
+  padding: 20px 20px 0 20px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #000000;
+}
+/* line 479, ../sass/custom.scss */
+.plate-upload-page .description .content p b.color-red {
+  color: #FF0000;
+}
+/* line 483, ../sass/custom.scss */
+.plate-upload-page .description .content ul {
+  margin-left: 20px;
+}
+/* line 486, ../sass/custom.scss */
+.plate-upload-page .description .content li {
+  color: #000000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 494, ../sass/custom.scss */
+.plate-upload-page .upload-controls .header {
+  margin-right: -15px;
+  height: 64px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffffff;
+}
+/* line 500, ../sass/custom.scss */
+.plate-upload-page .upload-controls .header p {
+  display: inline-block;
+  margin-top: 24px;
+  font-family: "Courier New";
+  font-size: 12px;
+}
+/* line 505, ../sass/custom.scss */
+.plate-upload-page .upload-controls .header p .color-blue {
+  color: #0000ff;
+}
+/* line 508, ../sass/custom.scss */
+.plate-upload-page .upload-controls .header p .color-pink {
+  color: #ff00ff;
+}
+/* line 513, ../sass/custom.scss */
+.plate-upload-page .upload-controls .content {
+  margin-right: -15px;
+  width: 100%;
+  text-align: center;
+  padding-top: 70px;
+}
+/* line 518, ../sass/custom.scss */
+.plate-upload-page .upload-controls .content .button-container {
+  padding-top: 10px;
+}
+/* line 522, ../sass/custom.scss */
+.plate-upload-page .upload-controls .content .droppable-area i {
+  display: inline-block;
+  padding: 15px;
+  font-size: 24px !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+/* line 536, ../sass/custom.scss */
+.required {
+  color: #000000;
+  position: absolute;
+  top: 26px;
+  font-weight: bold;
+  right: 20px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* line 546, ../sass/custom.scss */
+.required-star {
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-top: 5px;
+  color: #000000;
+}
+
+/* line 555, ../sass/custom.scss */
+.company-page .upload-form {
+  margin-top: 20px;
+}
+/* line 557, ../sass/custom.scss */
+.company-page .upload-form .form-container {
+  margin-left: -15px;
+  margin-top: 10px;
+}
+/* line 560, ../sass/custom.scss */
+.company-page .upload-form .form-container .droppable-area {
+  background-color: #ECF2F6;
+  margin-bottom: 0;
+}
+/* line 563, ../sass/custom.scss */
+.company-page .upload-form .form-container .droppable-area i {
+  display: inline-block;
+  padding: 8px 10px 7px 10px;
+  font-size: 24px !important;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+/* line 574, ../sass/custom.scss */
+.company-page .upload-form .form-container .description {
+  display: inline-block;
+  width: 269px;
+  padding-left: 10px;
+  top: 0;
+  left: 170px;
+  font-family: "Montserrat";
+  font-size: 11px;
+  line-height: 19px;
+  font-weight: bold;
+  position: absolute;
+}
+/* line 585, ../sass/custom.scss */
+.company-page .upload-form .form-container .description .btn-container {
+  margin-top: 78px;
+}
+/* line 587, ../sass/custom.scss */
+.company-page .upload-form .form-container .description .btn-container button {
+  margin-left: 0 !important;
+}
+
+/* line 596, ../sass/custom.scss */
+.billing-page {
+  padding-top: 10px;
+}
+/* line 598, ../sass/custom.scss */
+.billing-page .price_table {
+  background-color: #FFFFFF;
+  position: relative;
+  height: 560px;
+  max-width: 380px;
+  min-width: 298px;
+  text-align: center;
+  font-family: "Open Sans";
+}
+/* line 605, ../sass/custom.scss */
+.billing-page .price_table .col-md-4 {
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+/* line 611, ../sass/custom.scss */
+.billing-page .price_table .popular {
+  position: absolute;
+  width: 120px;
+  background-color: #354052;
+  font-weight: bold;
+  height: 30px;
+  color: white;
+  margin-top: -30px;
+  margin-left: -60px;
+  padding-top: 6px;
+  display: inline-block;
+}
+/* line 623, ../sass/custom.scss */
+.billing-page .price_table .title {
+  font-size: 20px;
+  color: #000000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 629, ../sass/custom.scss */
+.billing-page .price_table .price {
+  position: relative;
+  height: 60px;
+}
+/* line 632, ../sass/custom.scss */
+.billing-page .price_table .price .dollar {
+  float: right;
+  font-size: 20px;
+}
+/* line 636, ../sass/custom.scss */
+.billing-page .price_table .price .price-number {
+  line-height: 50px;
+  font-size: 56px;
+  color: #000000;
+  font-weight: bold;
+}
+/* line 642, ../sass/custom.scss */
+.billing-page .price_table .price .price-plan {
+  height: 100%;
+  position: absolute;
+  text-align: left;
+  margin-left: -15px;
+  padding-top: 30px;
+}
+/* line 651, ../sass/custom.scss */
+.billing-page .price_table .bill-desc {
+  margin-top: 20px;
+  font-weight: bold;
+}
+/* line 656, ../sass/custom.scss */
+.billing-page .price_table .bill-detail {
+  color: #9BA6B1;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-top: 1px solid #ECF2F6;
+  border-bottom: 1px solid #ECF2F6;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+/* line 666, ../sass/custom.scss */
+.billing-page .price_table .bill-detail .name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 672, ../sass/custom.scss */
+.billing-page .price_table button {
+  font-family: "Montserrat";
+}
+/* line 676, ../sass/custom.scss */
+.billing-page .price_table .price-features {
+  height: 242px;
+}
+/* line 680, ../sass/custom.scss */
+.billing-page .price_table .price-features ul li {
+  text-align: left;
+}
+/* line 682, ../sass/custom.scss */
+.billing-page .price_table .price-features ul li p {
+  color: #000000;
+  padding-right: 30px;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+/* line 695, ../sass/custom.scss */
+.billing-variable-page .help {
+  text-align: center;
+  font-family: "Montserrat";
+}
+/* line 698, ../sass/custom.scss */
+.billing-variable-page .help .icon-container {
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: inline-block;
+}
+/* line 707, ../sass/custom.scss */
+.billing-variable-page .help .plan-name {
+  padding: 20px;
+  font-size: 18px;
+}
+/* line 712, ../sass/custom.scss */
+.billing-variable-page .help .plan-desc p {
+  padding-bottom: 10px;
+}
+/* line 714, ../sass/custom.scss */
+.billing-variable-page .help .plan-desc p .email {
+  color: #59AFEE;
+}
+/* line 719, ../sass/custom.scss */
+.billing-variable-page .help .fa {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 20px;
+}
+/* line 730, ../sass/custom.scss */
+.billing-variable-page .checkout-form {
+  background-color: #FFFFFF;
+  font-family: "Open Sans";
+}
+/* line 733, ../sass/custom.scss */
+.billing-variable-page .checkout-form .header {
+  padding: 20px 20px 20px 20px;
+  background-color: #354052;
+}
+/* line 736, ../sass/custom.scss */
+.billing-variable-page .checkout-form .header span {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+}
+/* line 743, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content {
+  padding: 20px;
+}
+/* line 745, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content .plates {
+  width: 100px;
+  font-weight: bold;
+}
+/* line 750, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content .price-line {
+  border-top: 1px solid #ecf0f1;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+/* line 754, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content .price-line .dollar {
+  vertical-align: top;
+}
+/* line 757, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content .price-line .price-number {
+  color: #000000;
+  font-size: 18px;
+  font-weight: bold;
+  width: 80px;
+  display: inline-block;
+  text-align: right;
+}
+/* line 766, ../sass/custom.scss */
+.billing-variable-page .checkout-form .content .button-line {
+  border-bottom: 1px solid #ecf0f1;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  height: 100px;
+}
+
+/* line 777, ../sass/custom.scss */
+.onboard-page a {
+  color: #40bbea;
+}
+/* line 781, ../sass/custom.scss */
+.onboard-page .page-title-container span {
+  line-height: 40px;
+}
+/* line 786, ../sass/custom.scss */
+.onboard-page .timeline-item {
+  font-family: "Montserrat";
+  width: 500px;
+  height: 140px;
+  text-align: center;
+}
+/* line 791, ../sass/custom.scss */
+.onboard-page .timeline-item .icon-container {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background-color: #FFFFFF;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+/* line 799, ../sass/custom.scss */
+.onboard-page .timeline-item .icon-container .fa {
+  font-size: 22px !important;
+  padding: 12px;
+}
+/* line 805, ../sass/custom.scss */
+.onboard-page .timeline-item li .cbp_tmicon {
+  background-color: #ffffff;
+  color: #000000;
+}
+/* line 809, ../sass/custom.scss */
+.onboard-page .timeline-item li .active {
+  background-color: #354052;
+  color: #ffffff;
+}
+/* line 815, ../sass/custom.scss */
+.onboard-page .timeline-item .title {
+  padding: 10px;
+  font-size: 18px;
+}

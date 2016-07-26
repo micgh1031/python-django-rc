@@ -1,0 +1,26 @@
+{% load static %}
+<nav class="navbar user-info-navbar" role="navigation"><!-- User Info, Notifications and Menu Bar -->
+
+    <!-- Right links for user info navbar -->
+    <ul class="user-info-menu right-links list-inline list-unstyled">
+        <li class="user-profile">
+            <div class="login-btn-container">
+
+                {% if page == 'login' %}
+                <button class="btn btn-success" onclick="location.href='{% url 'fleeter.user.signup' %}';">
+                    SIGN UP
+                </button>
+                {% else %}
+                    <span>
+                        Already have an account?
+                    </span>
+                    <button class="btn btn-success" onclick="location.href='{% url 'fleeter.login' %}';">
+                        SIGN IN
+                    </button>
+                {% endif %}
+
+            </div>
+        </li>
+    </ul>
+
+</nav>

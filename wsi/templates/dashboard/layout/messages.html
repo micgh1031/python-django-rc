@@ -1,0 +1,97 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Messages</h3>
+            <div class="panel-options">
+                <a href="#" data-toggle="panel">
+                    <span class="collapse-icon">&ndash;</span>
+                    <span class="expand-icon">+</span>
+                </a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered" id="table-messages">
+                <thead>
+                <th>Sender</th>
+                <th>Text</th>
+                <th>Plate</th>
+                <th>Origin</th>
+                <th>Action</th>
+                </thead>
+                <tbody>
+                {% for message in messages %}
+                    {% if not message.is_deleted %}
+                        <tr pk="{{ message.pk }}">
+                        <td>{{ message.sender.email }}</td>
+                        <td>
+                            {{ message.text }}
+                        </td>
+                        <td>
+                            {{ message.plate }}
+                        </td>
+                        <td>
+                            {{ message.origin }}
+                        </td>
+                        <td>
+                            <span class="btn btn-sm btn-danger" onclick="delete_message(this);">DELETE</span>
+                            <span class="btn btn-sm btn-danger" onclick="mark_abusive(this);">Mark as Abusive</span>
+                        </td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block custom_javascripts %}
+    <!-- Imported scripts on this page -->
+    <script src="{% static 'js/datatables/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/datatables/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'js/datatables/yadcf/jquery.dataTables.yadcf.js' %}"></script>
+    <script src="{% static 'js/datatables/tabletools/dataTables.tableTools.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'libs/bootbox.js/bootbox.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $("#table-messages").dataTable();
+        });
+
+        function delete_message(obj) {
+            bootbox.dialog({
+                message: "Are you sure to delete this message?",
+                title: "Delete Message",
+                buttons: {
+                    danger: {
+                        label: "CONFIRM",
+                        className: "btn-success",
+                        callback: function () {
+                            var obj_parent = $(obj).parent().parent();
+                            var mid = obj_parent.attr('pk');
+                            $.ajax({
+                                url: '{% url 'dashboard.messages' %}',
+                                method: 'POST',
+                                contentType: 'application/json',
+                                data: JSON.stringify({pk: mid, method: 'DELETE'}),
+                                success: function (response) {
+                                    if (response.success == true) {
+                                        obj_parent.remove();
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }
+            });
+        }
+
+        function mark_abusive(obj) {
+
+        }
+    </script>
+{% endblock custom_javascripts %}

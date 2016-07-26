@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="alert alert-danger">
+        Update successfully!
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="">
+        <div class="row">
+            <div class="page-title-container">
+                <span>You have 60 license plates slots reserved.</span>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="title">Import Plates</h1>
+        </div>
+        <div class="row plate-upload-page">
+            <div class="col-md-6 description">
+                <div class="row">
+                    <div class="header">
+                            <span class="cloud-icon">
+                                <i class="fa fa-cloud-download"></i>
+                            </span>
+                        <div class="template-link">
+                            <a href="#">Download Excel Input Template</a>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p>Upload a CSV file to import a new plates directory. <b>&nbsp;CSV uploads
+                            overwrite the current directory, so please ensure that your file
+                            includes all plates.</b><br/><b class="color-red">Download existing list before uploading
+                            new CSV</b></p>
+                        <p>
+                            Your CSV must :
+                        </p>
+                        <ul>
+                            <li>Contain a email address for each plate</li>
+                            <li><b>List one plate per line</b></li>
+                            <li>Match the required syntax on right</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 upload-controls">
+                <div class="header">
+                    <p><span class="color-blue">Plate</span>, Origin, <span class="color-pink">example@mail.com</span>
+                    </p>
+                </div>
+                <div class="content">
+                    <div id="advancedDropzone" class="droppable-area dz-clickable" style="min-height: 200px;">
+                        <i class="fa fa-cloud-upload"></i>
+                    </div>
+                    <div class="button-container">
+                        <button class="btn btn-success">
+                            UPLOAD CSV FILE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/header.html' %}
+
+<body class="{% block body_stylesheet %}page-body{% endblock body_stylesheet %}">
+<div class="page-container">
+    {% block sidebar %}
+        {% include 'include/sidebar.html' %}
+    {% endblock sidebar %}
+    {% block main_content %}
+        <div class="main-content">
+            {% block navbar %}
+                {% include 'include/navbar.html' %}
+            {% endblock navbar %}
+
+            {% block content %}{% endblock content %}
+        </div>
+    {% endblock main_content %}
+</div>
+{% include 'include/footer.html' %}
+
+
+{% include 'include/javascripts.html' %}
+</body>
+</html>

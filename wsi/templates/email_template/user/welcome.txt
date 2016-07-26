@@ -1,0 +1,14 @@
+Dear {{ display_name }},\n
+\n
+Thank you for activating your account and becoming part of our global on-line  community!\n
+\n
+Share your Windshieldink experience with others and stay informed of future enhancements by visiting our website at windshieldink.com\n
+\n
+Sincerely,\n
+\n
+Your Windshieldink Team\n
+\n
+\n
+Have questions, ideas, or just want to say hi?\n
+\n
+Email us at admin@windshieldink.com\n

@@ -1,0 +1,83 @@
+{% load static %}
+{% load staticfiles %}
+<!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
+
+<!-- Add "fixed" class to make the sidebar fixed always to the browser viewport. -->
+<!-- Adding class "toggle-others" will keep only one menu item open at a time. -->
+<!-- Adding class "collapsed" collapse sidebar root elements and show only icons. -->
+<div class="sidebar-menu toggle-others fixed">
+
+    <div class="sidebar-menu-inner">
+
+        <header class="logo-env">
+
+            <!-- logo -->
+            <div class="logo">
+                <a href="/" class="logo-expanded">
+                    <img src="{% static 'images/logo.png' %}" width="120" alt=""/>
+                </a>
+
+                <a href="/" class="logo-collapsed">
+                    <img src="{% static 'images/logo.png' %}" width="60" alt=""/>
+                </a>
+            </div>
+
+        </header>
+
+
+        <ul id="main-menu" class="main-menu">
+            <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+            <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+            <li class="{% if page == 'index' %}active{% endif %}">
+                <a href="{% url 'dashboard.index' %}">
+                    <i class="linecons-cog"></i>
+                    <span class="title">Dashboard</span>
+                </a>
+            </li>
+            <li class="has-sub {% if page == 'users' or page == 'blacklist' %}opened expanded{% endif %}">
+                <a href="#">
+                    <i class="linecons-star"></i>
+                    <span class="title">User Management</span>
+                </a>
+                <ul {% if page == 'users' or page == 'blacklist' %}{% endif %}>
+                    <li class="{% if page == 'users' %}active{% endif %}">
+                        <a href="{% url 'dashboard.users' %}">
+                            Users
+                        </a>
+                    </li>
+                    <li class="{% if page == 'blacklist' %}active{% endif %}">
+                        <a href="{% url 'dashboard.blacklist' %}">
+                            Blacklist
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="{% if page == 'license_plates' %}active{% endif %}">
+                <a href="{% url 'dashboard.license_plates' %}">
+                    <i class="fa fa-bus"></i>
+                    <span class="title">Vehicles</span>
+                </a>
+            </li>
+            <li class="{% if page == 'abusive' %}active{% endif %}">
+                <a href="{% url 'dashboard.abusive' %}">
+                    <i class="linecons-mail"></i>
+                    <span class="title">Abusive Management</span>
+                </a>
+            </li>
+            <li class="{% if page == 'messages' %}active{% endif %}">
+                <a href="{% url 'dashboard.messages' %}">
+                    <i class="linecons-mail"></i>
+                    <span class="title">Messages</span>
+                </a>
+            </li>
+            <li class="{% if page == 'notice' %}active{% endif %}">
+                <a href="{% url 'dashboard.notice' %}">
+                    <i class="linecons-comment"></i>
+                    <span class="title">Notice</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

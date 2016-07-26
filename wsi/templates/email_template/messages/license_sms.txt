@@ -1,0 +1,16 @@
+You have been sent a message to license plate: {{ plate }}
+
+Message: {{ message }};
+
+{{ signature }}
+
+Sincerely,
+
+Your Windshieldink Team
+
+Powered by windshieldink.com.
+
+
+If this message contains abusive content, please inform us at abuse@windshieldink.com
+
+Please do not reply to this message.

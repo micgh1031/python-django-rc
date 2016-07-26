@@ -1,0 +1,43 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load staticfiles %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="xe-widget xe-counter xe-counter-blue" data-count=".num" data-from="0" data-to="{{ user_count }}"
+                 data-duration="3" data-easing="true">
+                <div class="xe-icon">
+                    <i class="linecons-user"></i>
+                </div>
+                <div class="xe-label">
+                    <strong class="num">0</strong>
+                    <span>Users Total</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0"
+                 data-to="{{ plates }}"
+                 data-duration="4" data-easing="true">
+                <div class="xe-icon">
+                    <i class="linecons-comment"></i>
+                </div>
+                <div class="xe-label">
+                    <strong class="num">0</strong>
+                    <span>Plates</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block custom_javascripts %}
+    <!-- Imported scripts on this page -->
+    <script src="{% static 'js/xenon-widgets.js' %}"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+
+        });
+    </script>
+{% endblock custom_javascripts %}
