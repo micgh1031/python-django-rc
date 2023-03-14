@@ -1,4 +1,4 @@
-# Windshieldink Mobile Backend
+# Python-Django REST API Backend for Mobile App
 
 
 ## Pre-requirement
